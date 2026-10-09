@@ -439,10 +439,12 @@ textarea {
   box-shadow: 0 14px 30px rgba(7, 21, 22, 0.08);
 }
 
-.experience-card img {
+.experience-card img,
+.experience-card video {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  background: var(--ink);
 }
 
 .experience-card div {
@@ -490,7 +492,8 @@ textarea {
   color: #fff;
 }
 
-.route-media img {
+.route-media img,
+.route-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -605,14 +608,16 @@ textarea {
   min-height: 656px;
 }
 
-.gallery-grid img {
+.gallery-grid img,
+.gallery-grid video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 360ms ease;
 }
 
-.gallery-grid figure:hover img {
+.gallery-grid figure:hover img,
+.gallery-grid figure:hover video {
   transform: scale(1.04);
 }
 
@@ -818,17 +823,18 @@ textarea {
   }
 
   .hero {
-    min-height: 84svh;
+    min-height: 96svh;
   }
 
   .hero-content {
     width: calc(100vw - 32px);
-    max-width: 340px;
-    margin: 0 0 9.5rem 1rem;
+    max-width: 358px;
+    margin: 0 0 13.5rem 1rem;
   }
 
   .hero h1 {
-    font-size: 2.86rem;
+    font-size: 2.62rem;
+    line-height: 0.98;
   }
 
   .hero-copy {
@@ -846,9 +852,10 @@ textarea {
   .hero-panel {
     left: 1rem;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 0.75rem;
     width: auto;
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .booking-strip {

@@ -66,7 +66,7 @@ quoteForm.addEventListener("submit", (event) => {
   const guests = data.get("guests");
   const experience = data.get("experience");
   const time = data.get("time");
-  const message = `Hola Yates de Mike, quiero cotizar ${experience} para ${guests}, en horario de ${time}, con fecha ${date}. Me gustaría conocer disponibilidad y detalles de la salida.`;
+  const message = `Hola Yates de Mike, quiero cotizar ${experience} en Costa del Sol para ${guests}, en horario de ${time}, con fecha ${date}. Me gustaría conocer disponibilidad, punto de abordaje y detalles de la ruta.`;
 
   quoteMessage.textContent = message;
   quoteResult.hidden = false;
