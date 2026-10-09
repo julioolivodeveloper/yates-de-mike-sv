@@ -6,6 +6,7 @@ const quoteResult = document.querySelector("[data-quote-result]");
 const quoteMessage = document.querySelector("[data-quote-message]");
 const copyMessage = document.querySelector("[data-copy-message]");
 const planButtons = document.querySelectorAll("[data-plan]");
+const heroVideo = document.querySelector("[data-hero-video]");
 
 const updateHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 20);
@@ -13,6 +14,25 @@ const updateHeader = () => {
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
+
+if (heroVideo?.dataset.nextSrc) {
+  let hasSwappedHeroVideo = false;
+
+  heroVideo.addEventListener("ended", () => {
+    if (hasSwappedHeroVideo) return;
+
+    hasSwappedHeroVideo = true;
+    heroVideo.loop = true;
+
+    if (heroVideo.dataset.nextPoster) {
+      heroVideo.poster = heroVideo.dataset.nextPoster;
+    }
+
+    heroVideo.src = heroVideo.dataset.nextSrc;
+    heroVideo.load();
+    heroVideo.play().catch(() => {});
+  });
+}
 
 menuToggle.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
