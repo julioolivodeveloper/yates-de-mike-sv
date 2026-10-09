@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 112" role="img" aria-labelledby="title desc">
+  <title id="title">Yates de Mike</title>
+  <desc id="desc">Marca tipográfica con monograma náutico.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f6df9a"/>
+      <stop offset="0.48" stop-color="#caa75a"/>
+      <stop offset="1" stop-color="#8f6b2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="112" fill="none"/>
+  <g transform="translate(8 10)">
+    <circle cx="45" cy="45" r="41" fill="#0b1f24" stroke="url(#gold)" stroke-width="3"/>
+    <path d="M20 57c12 9 37 9 50 0" fill="none" stroke="#f4d98d" stroke-width="4" stroke-linecap="round"/>
+    <path d="M45 18v46" fill="none" stroke="#f4d98d" stroke-width="4" stroke-linecap="round"/>
+    <path d="M45 18c17 11 26 24 27 40-13-5-24-8-27-40Z" fill="#f4d98d" opacity=".92"/>
+    <path d="M45 18c-15 10-24 23-27 39 12-5 23-8 27-39Z" fill="#ffffff" opacity=".88"/>
+  </g>
+  <g fill="#f8f3e7">
+    <text x="106" y="48" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700">Yates de Mike</text>
+    <text x="108" y="76" font-family="Inter, Arial, sans-serif" font-size="15" fill="#c7b27d">Costa del Sol, El Salvador</text>
+  </g>
+</svg>
