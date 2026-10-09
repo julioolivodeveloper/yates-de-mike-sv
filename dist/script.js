@@ -2,10 +2,10 @@ const header = document.querySelector("[data-header]");
 const nav = document.querySelector("[data-nav]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const quoteForm = document.querySelector("[data-quote-form]");
-const quoteResult = document.querySelector("[data-quote-result]");
-const quoteMessage = document.querySelector("[data-quote-message]");
-const copyMessage = document.querySelector("[data-copy-message]");
-const whatsappLink = document.querySelector("[data-whatsapp-link]");
+const bookingDialog = document.querySelector("[data-booking-dialog]");
+const reservationForm = document.querySelector("[data-reservation-form]");
+const bookingContent = document.querySelector("[data-booking-content]");
+const bookingSuccess = document.querySelector("[data-booking-success]");
 const planButtons = document.querySelectorAll("[data-plan]");
 const heroVideo = document.querySelector("[data-hero-video]");
 const backgroundVideos = document.querySelectorAll("video:not([data-hero-video])");
@@ -81,6 +81,10 @@ if (heroVideo?.dataset.heroPlaylist) {
   });
 }
 
+const today = new Date();
+const localToday = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+quoteForm.elements.date.min = localToday;
+
 menuToggle.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!isOpen));
@@ -100,9 +104,8 @@ nav.addEventListener("click", (event) => {
 
 planButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    quoteForm.elements.experience.value = button.dataset.plan;
     document.querySelector("#reservar").scrollIntoView({ behavior: "smooth", block: "center" });
-    quoteForm.elements.guests.focus({ preventScroll: true });
+    quoteForm.elements.date.focus({ preventScroll: true });
   });
 });
 
@@ -110,28 +113,30 @@ quoteForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(quoteForm);
   const date = data.get("date");
-  const dateLabel = date ? ` el ${new Date(`${date}T12:00:00`).toLocaleDateString("es-SV", { day: "numeric", month: "long", year: "numeric" })}` : "";
-  const guests = data.get("guests");
-  const experience = data.get("experience");
-  const time = data.get("time");
-  const message = `Hola Yates de Mike, me interesa cotizar ${experience} para ${guests}${dateLabel}, en horario de ${time}. ¿Me comparten disponibilidad, punto de abordaje y detalles de la ruta en Costa del Sol?`;
+  const days = Number(data.get("days"));
+  const formatDate = new Date(`${date}T12:00:00`).toLocaleDateString("es-SV", { day: "numeric", month: "long", year: "numeric" });
 
-  quoteMessage.textContent = message;
-  whatsappLink.href = `https://wa.me/50322619393?text=${encodeURIComponent(message)}`;
-  quoteResult.hidden = false;
+  bookingDialog.querySelector("[data-summary-date]").textContent = formatDate;
+  bookingDialog.querySelector("[data-summary-days]").textContent = `${days} ${days === 1 ? "día" : "días"}`;
+
+  bookingContent.hidden = false;
+  bookingSuccess.hidden = true;
+  reservationForm.reset();
+  bookingDialog.showModal();
 });
 
-copyMessage.addEventListener("click", async () => {
-  const text = quoteMessage.textContent;
-  if (!text) return;
+reservationForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  bookingContent.hidden = true;
+  bookingSuccess.hidden = false;
+  reservationForm.reset();
+  bookingDialog.querySelector("[data-success-title]").focus();
+});
 
-  try {
-    await navigator.clipboard.writeText(text);
-    copyMessage.textContent = "Copiado";
-    window.setTimeout(() => {
-      copyMessage.textContent = "Copiar";
-    }, 1400);
-  } catch {
-    copyMessage.textContent = "Selecciona el texto";
-  }
+bookingDialog.querySelectorAll("[data-dialog-close]").forEach((button) => {
+  button.addEventListener("click", () => bookingDialog.close());
+});
+
+bookingDialog.addEventListener("click", (event) => {
+  if (event.target === bookingDialog) bookingDialog.close();
 });

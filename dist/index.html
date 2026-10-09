@@ -75,53 +75,51 @@
         </aside>
       </section>
 
-      <section class="booking-strip" id="reservar" aria-label="Solicitud rápida">
+      <section class="booking-strip" id="reservar" aria-label="Solicitud de cotización">
         <div class="strip-intro">
-          <p class="eyebrow">Reserva privada</p>
-          <h2>Cuéntanos tu plan</h2>
+          <p class="eyebrow">Cotización privada</p>
+          <h2>Solicita una cotización</h2>
+          <p class="booking-hint">Indica fecha y duración; te contactaremos con precio y disponibilidad.</p>
         </div>
         <form class="quick-form" data-quote-form>
           <label>
-            <span>Fecha</span>
-            <input name="date" type="date" />
+            <span>Fecha de salida</span>
+            <input name="date" type="date" required />
           </label>
           <label>
-            <span>Invitados</span>
-            <select name="guests">
-              <option value="2-4 invitados">2-4 invitados</option>
-              <option value="5-8 invitados">5-8 invitados</option>
-              <option value="9-12 invitados">9-12 invitados</option>
-              <option value="Grupo grande">Grupo grande</option>
-            </select>
+            <span>Días de paseo</span>
+            <input name="days" type="number" min="1" step="1" value="1" required />
           </label>
-          <label>
-            <span>Experiencia</span>
-            <select name="experience">
-              <option value="Día privado en yate">Día privado en yate</option>
-              <option value="Recorrido por el Estero de Jaltepeque">Recorrido por el Estero de Jaltepeque</option>
-              <option value="Sunset en Costa del Sol">Sunset en Costa del Sol</option>
-              <option value="Celebración a bordo">Celebración a bordo</option>
-            </select>
-          </label>
-          <label>
-            <span>Horario</span>
-            <select name="time">
-              <option value="Mañana">Mañana</option>
-              <option value="Mediodía">Mediodía</option>
-              <option value="Atardecer">Atardecer</option>
-              <option value="A definir">A definir</option>
-            </select>
-          </label>
-          <button class="button button-dark" type="submit">Preparar cotización</button>
+          <button class="button button-dark" type="submit">Solicitar cotización</button>
         </form>
-        <div class="quote-result" data-quote-result hidden>
-          <p data-quote-message></p>
-          <div>
-            <button class="button button-small" type="button" data-copy-message>Copiar</button>
-            <a class="button button-small button-primary whatsapp-link" href="https://wa.me/50322619393" target="_blank" rel="noreferrer" data-whatsapp-link aria-label="Enviar cotización por WhatsApp al +503 2261-9393"><span>WhatsApp</span><small>+503 2261-9393</small></a>
-          </div>
-        </div>
       </section>
+
+      <dialog class="booking-dialog" data-booking-dialog aria-labelledby="booking-dialog-title">
+        <button class="dialog-close" type="button" data-dialog-close aria-label="Cerrar ventana">&times;</button>
+        <div class="booking-dialog-content" data-booking-content>
+          <p class="eyebrow">Solicitud de cotización</p>
+          <h2 id="booking-dialog-title">Tu salida en Costa del Sol</h2>
+          <dl class="booking-summary">
+            <div><dt>Fecha</dt><dd data-summary-date></dd></div>
+            <div><dt>Duración</dt><dd data-summary-days></dd></div>
+          </dl>
+          <form class="contact-form" data-reservation-form>
+            <h3>Datos de contacto</h3>
+            <label>Nombre completo<input name="name" type="text" autocomplete="name" required /></label>
+            <label>Número de contacto<input name="phone" type="tel" autocomplete="tel" inputmode="tel" minlength="7" placeholder="+503 0000-0000" required /></label>
+            <label>Correo electrónico<input name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required /></label>
+            <p class="demo-notice">Demostración: tus datos no se guardan ni se envían.</p>
+            <button class="button button-dark" type="submit">Solicitar cotización</button>
+          </form>
+        </div>
+        <section class="booking-success" data-booking-success role="status" aria-live="polite" hidden>
+          <p class="eyebrow">Solicitud lista</p>
+          <h2 tabindex="-1" data-success-title>Gracias por tu interés</h2>
+          <p>Nos pondremos en contacto contigo para brindarte el precio de tu salida.</p>
+          <p class="demo-notice">Esta es solo una demostración: la información no se guarda ni se envía, por lo que no se generará un contacto real.</p>
+          <button class="button button-dark" type="button" data-dialog-close>Entendido</button>
+        </section>
+      </dialog>
 
       <section class="section intro-section">
         <div class="intro-grid">
