@@ -14,6 +14,9 @@
       content="Vive Costa del Sol desde el agua con rutas privadas por el estero, el Pacífico y atardeceres memorables."
     />
     <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -31,7 +34,7 @@
         <a href="#experiencias">Planes</a>
         <a href="#rutas">Costa del Sol</a>
         <a href="#servicio">Servicio</a>
-        <a href="#galeria">Videos</a>
+        <a href="#galeria">Galería</a>
         <a class="nav-cta" href="#reservar">Reservar</a>
       </nav>
     </header>
@@ -41,10 +44,10 @@
         <video
           class="hero-video"
           data-hero-video
-          data-next-src="./assets/hero-yates-mike-next.mp4"
-          data-next-poster="./assets/hero-yates-mike-next.jpg"
-          src="./assets/hero-yates-mike.mp4"
-          poster="./assets/hero-yates-mike.jpg"
+          data-hero-playlist="./assets/reel-dzizgroxc1w.mp4,./assets/reel-ddcolkkkzqb.mp4,./assets/reel-deku-zkilvy.mp4,./assets/reel-dghleazpcfs.mp4,./assets/reel-dehijs2xsif.mp4,./assets/reel-dd5vfq1xy-v.mp4,./assets/reel-ddpgojoq2eh.mp4,./assets/reel-djcpntrolid.mp4"
+          data-hero-posters="./assets/reel-dzizgroxc1w.jpg,./assets/reel-ddcolkkkzqb.jpg,./assets/reel-deku-zkilvy.jpg,./assets/reel-dghleazpcfs.jpg,./assets/reel-dehijs2xsif.jpg,./assets/reel-dd5vfq1xy-v.jpg,./assets/reel-ddpgojoq2eh.jpg,./assets/reel-djcpntrolid.jpg"
+          src="./assets/reel-dzizgroxc1w.mp4"
+          poster="./assets/reel-dzizgroxc1w.jpg"
           autoplay
           muted
           playsinline
@@ -55,7 +58,7 @@
           <p class="eyebrow">Costa del Sol · Estero de Jaltepeque</p>
           <h1>Yates privados en Costa del Sol</h1>
           <p class="hero-copy">
-            Sube a bordo con Yates de Mike y vive el Pacífico salvadoreño desde una ruta privada: estero, mar abierto, atardecer y celebraciones con atención cercana para tu grupo.
+            Zarpa desde Costa del Sol y descubre el Estero de Jaltepeque, el Pacífico salvadoreño y sus atardeceres a bordo de una salida privada, pensada para compartir a tu ritmo.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#reservar">Solicitar cotización</a>
@@ -121,13 +124,19 @@
       </section>
 
       <section class="section intro-section">
-        <div class="section-kicker">Experiencia local, presentación premium</div>
         <div class="intro-grid">
-          <h2>Costa del Sol se disfruta mejor desde el agua.</h2>
+          <div>
+            <p class="eyebrow">Costa del Sol, El Salvador</p>
+            <h2>El Salvador revela otra cara cuando se vive desde el agua.</h2>
+          </div>
           <p>
-            Entre el Estero de Jaltepeque y el Pacífico, Yates de Mike prepara salidas privadas para descansar, celebrar y crear contenido real en uno de los destinos de playa más memorables de El Salvador.
+            Entre canales de manglar, mar abierto y playas del litoral, cada salida ofrece un paisaje distinto. Yates de Mike te recibe en Costa del Sol para vivirlo con privacidad, buen servicio y el tiempo para disfrutarlo.
           </p>
         </div>
+        <figure class="intro-photo">
+          <img src="./assets/local/photo-estero-drone.jpg" alt="Vista aérea de Costa del Sol y el Estero de Jaltepeque" loading="lazy" decoding="async" />
+          <figcaption><span>La Paz · El Salvador</span><strong>Estero, mar y horizonte en una sola escapada.</strong></figcaption>
+        </figure>
       </section>
 
       <section class="section experiences" id="experiencias">
@@ -138,7 +147,7 @@
         </div>
         <div class="experience-grid">
           <article class="experience-card">
-            <video src="./assets/hero-yates-mike-next.mp4" poster="./assets/hero-yates-mike-next.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <video src="./assets/reel-deku-zkilvy.mp4" poster="./assets/reel-deku-zkilvy.jpg" muted loop playsinline preload="none"></video>
             <div>
               <p>01</p>
               <h3>Día privado en yate</h3>
@@ -147,7 +156,7 @@
             </div>
           </article>
           <article class="experience-card">
-            <video src="./assets/hero-yates-mike.mp4" poster="./assets/hero-yates-mike.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <video src="./assets/reel-dehijs2xsif.mp4" poster="./assets/reel-dehijs2xsif.jpg" muted loop playsinline preload="none"></video>
             <div>
               <p>02</p>
               <h3>Sunset en Costa del Sol</h3>
@@ -156,7 +165,7 @@
             </div>
           </article>
           <article class="experience-card">
-            <video src="./assets/hero-yates-mike-next.mp4" poster="./assets/hero-yates-mike-next.jpg" autoplay muted loop playsinline preload="metadata"></video>
+            <video src="./assets/reel-dd5vfq1xy-v.mp4" poster="./assets/reel-dd5vfq1xy-v.jpg" muted loop playsinline preload="none"></video>
             <div>
               <p>03</p>
               <h3>Celebraciones a bordo</h3>
@@ -169,7 +178,7 @@
 
       <section class="feature-band" id="rutas">
         <div class="route-media">
-          <video src="./assets/hero-yates-mike-next.mp4" poster="./assets/hero-yates-mike-next.jpg" autoplay muted loop playsinline preload="metadata"></video>
+          <video src="./assets/reel-dghleazpcfs.mp4" poster="./assets/reel-dghleazpcfs.jpg" muted loop playsinline preload="none"></video>
         </div>
         <div class="route-copy">
           <p class="eyebrow">Ruta Costa del Sol</p>
@@ -240,26 +249,46 @@
 
       <section class="section gallery" id="galeria">
         <div class="section-heading">
-          <p class="eyebrow">Videos reales</p>
-          <h2>Momentos de Yates de Mike en Costa del Sol</h2>
-          <p>Reels y momentos a bordo para ver el ambiente, la ruta y la energía de una salida privada en la costa salvadoreña.</p>
+          <p class="eyebrow">Costa del Sol en imágenes</p>
+          <h2>El paisaje y los momentos que hacen única cada salida.</h2>
+          <p>Desde los canales de Jaltepeque hasta la última luz sobre el Pacífico, así se vive la costa desde el agua.</p>
         </div>
         <div class="gallery-grid">
           <figure class="wide">
-            <video src="./assets/hero-yates-mike-next.mp4" poster="./assets/hero-yates-mike-next.jpg" autoplay muted loop playsinline preload="metadata"></video>
-            <figcaption>Recorrido por el Estero de Jaltepeque</figcaption>
+            <img src="./assets/local/photo-estuary-aerial.jpg" alt="Vista aérea del Estero de Jaltepeque con embarcaciones" loading="lazy" decoding="async" />
+            <figcaption>El Estero de Jaltepeque desde el aire</figcaption>
           </figure>
           <figure>
-            <video src="./assets/hero-yates-mike.mp4" poster="./assets/hero-yates-mike.jpg" autoplay muted loop playsinline preload="metadata"></video>
-            <figcaption>Salida privada</figcaption>
+            <img src="./assets/local/photo-yacht-bow.jpg" alt="Proa de un yate sobre aguas abiertas" loading="lazy" decoding="async" />
+            <figcaption>Mar abierto, a tu propio ritmo</figcaption>
           </figure>
           <figure>
-            <img src="./assets/hero-yates-mike-next.jpg" alt="Persona disfrutando una salida real con Yates de Mike en Costa del Sol" />
-            <figcaption>Ambiente a bordo</figcaption>
+            <img src="./assets/local/photo-costa-sunset.jpg" alt="Atardecer sobre la costa de Costa del Sol" loading="lazy" decoding="async" />
+            <figcaption>La última luz sobre el Pacífico</figcaption>
           </figure>
           <figure>
-            <img src="./assets/hero-yates-mike.jpg" alt="Yate de Mike navegando en una experiencia privada" />
-            <figcaption>Momentos reales</figcaption>
+            <img src="./assets/local/photo-celebration-bride.jpg" alt="Celebración de boda a bordo del yate" loading="lazy" decoding="async" />
+            <figcaption>Una celebración distinta, a bordo</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/local/photo-sunset-onboard.jpg" alt="Atardecer visto desde el yate" loading="lazy" decoding="async" />
+            <figcaption>Atardecer desde el agua</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/local/photo-group-celebration.jpg" alt="Grupo de amigos celebrando a bordo" loading="lazy" decoding="async" />
+            <figcaption>Un plan para compartir</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/local/photo-pacific-coast.jpg" alt="Costa del Pacífico salvadoreño vista desde el aire" loading="lazy" decoding="async" />
+            <figcaption>El Pacífico salvadoreño</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/local/photo-beach-village.jpg" alt="Playa y palmeras en la costa salvadoreña" loading="lazy" decoding="async" />
+            <figcaption>La costa de La Paz</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/local/photo-coast-detail.jpg" alt="Arena, mar y horizonte en Costa del Sol" loading="lazy" decoding="async" />
+            <figcaption>Mar abierto y arena clara</figcaption>
           </figure>
         </div>
       </section>
@@ -275,12 +304,12 @@
 
       <section class="final-cta">
         <video
-          src="./assets/hero-yates-mike.mp4"
-          poster="./assets/hero-yates-mike.jpg"
-          autoplay
+          src="./assets/reel-dd5vfq1xy-v.mp4"
+          poster="./assets/reel-dd5vfq1xy-v.jpg"
           muted
           loop
           playsinline
+          preload="none"
         ></video>
         <div>
           <p class="eyebrow">Yates de Mike</p>
